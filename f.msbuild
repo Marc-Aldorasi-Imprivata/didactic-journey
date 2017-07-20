@@ -2,7 +2,8 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
 	<Target Name="Build">
-		<MSBuild Projects="f1.csproj;f2.csproj"/>
+		<RemoveDir Directories="bin;obj"/>
+		<MSBuild Projects="f1.csproj;f2.csproj" BuildInParallel="true"/>
 	</Target>
 </Project>
 
